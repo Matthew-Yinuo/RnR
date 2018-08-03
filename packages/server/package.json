@@ -55,7 +55,8 @@
     "typeorm": "0.2.0",
     "uuid": "^3.2.1",
     "yup": "^0.24.1",
-    "@airbnb/common": "1.00"
+    "@airbnb/common": "1.00",
+    "@airbnb/controller": "1.00"
   },
   "scripts": {
     "start": "NODE_ENV=development nodemon --exec ts-node src/index.ts",
