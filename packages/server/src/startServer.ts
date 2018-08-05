@@ -22,7 +22,7 @@ export const startServer = async () => {
   }
 
   const server = new GraphQLServer({
-    schema: genSchema(),
+    schema: genSchema() as any,
     context: ({ request }) => ({
       redis,
       url: request.protocol + "://" + request.get("host"),
@@ -30,7 +30,6 @@ export const startServer = async () => {
       req: request
     })
   });
-
   server.express.use(
     new RateLimit({
       store: new RateLimitRedisStore({
