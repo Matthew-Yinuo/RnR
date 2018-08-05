@@ -24,9 +24,9 @@
     "react-apollo": "^2.1.5",
     "react-dom": "^16.4.0",
     "react-router-dom": "^4.3.1",
+    "@airbnb/controller": "1.00",
     "yup": "^0.26.0",
-    "@airbnb/common": "1.00",
-    "@airbnb/controller": "1.00"
+    "@airbnb/common": "1.00"
   },
   "scripts": {
     "start": "react-scripts-ts start",
