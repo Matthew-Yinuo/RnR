@@ -1,7 +1,7 @@
 import { Connection } from "typeorm";
 import * as Redis from "ioredis";
 import * as faker from "faker";
-import { passwordNotLongEnough } from "@airbnb/common";
+import { passmin } from "@airbnb/common";
 
 import { User } from "../../../entity/User";
 import { TestClient } from "../../../utils/TestClient";
@@ -62,7 +62,7 @@ describe("forgot password", () => {
         forgotPasswordChange: [
           {
             path: "newPassword",
-            message: passwordNotLongEnough
+            message: passmin
           }
         ]
       }
