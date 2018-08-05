@@ -5,7 +5,10 @@
   "typings": "dist/index.d.ts",
   "license": "MIT",
   "scripts": {
-    "build": "rimraf ./dist && tsc"
+    "build": "rimraf ./dist && tsc",
+    "introspect": "apollo-codegen introspect-schema http://localhost:4000 --output schema.json",
+    "generate": "apollo-codegen generate src/**/*.tsx --schema schema.json --target typescript --output src/RegisterMutation.ts",
+    "gen-types": "npm run introspect && npm run generate"
   },
   "dependencies": {
     "@types/react": "^16.4.7",
@@ -19,6 +22,7 @@
     "@types/node": "^10.3.4",
     "@types/react": "^16.4.7",
     "@types/react-dom": "^16.0.6",
+    "apollo-codegen": "^0.20.2",
     "rimraf": "^2.6.2",
     "tslint": "^5.10.0",
     "tslint-config-prettier": "^1.13.0",
