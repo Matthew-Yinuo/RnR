@@ -8,12 +8,16 @@
     "build": "rimraf ./dist && tsc"
   },
   "dependencies": {
+    "@types/react": "^16.4.7",
+    "graphql": "^0.13.2",
+    "graphql-tag": "^2.9.2",
     "react": "^16.4.1",
+    "react-apollo": "^2.1.6",
     "react-dom": "^16.4.1"
   },
   "devDependencies": {
     "@types/node": "^10.3.4",
-    "@types/react": "^16.4.0",
+    "@types/react": "^16.4.7",
     "@types/react-dom": "^16.0.6",
     "rimraf": "^2.6.2",
     "tslint": "^5.10.0",
