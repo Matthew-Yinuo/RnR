@@ -18,7 +18,21 @@ export const registerEmailValidation = yup
   .email("E-mail is not valid!")
   .required();
 
+export const loginPassValidation = yup.string().required();
+
+export const loginEmailValidation = yup
+  .string()
+  .min(6, emailmin)
+  .max(50, emailmax)
+  .email("Oops! This does not appear to be an email")
+  .required();
+
 export const registerUserSchema = yup.object().shape({
   email: registerEmailValidation,
   password: registerPassValidation
+});
+
+export const loginUserSchema = yup.object().shape({
+  email: loginEmailValidation,
+  password: loginPassValidation
 });
