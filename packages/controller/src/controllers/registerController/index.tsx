@@ -4,7 +4,7 @@ import { graphql, ChildMutateProps } from "react-apollo";
 import {
   RegisterUserMutation,
   RegisterUserMutationVariables
-} from "../../RegisterMutation";
+} from "../../schemaTypes";
 
 interface Props {
   children: (
