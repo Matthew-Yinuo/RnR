@@ -23,16 +23,7 @@ class C extends React.PureComponent<FormikProps<FormValues> & Props> {
           <Field
             name="email"
             prefix={
-              (
-                <Icon
-                  type="user"
-                  style={
-                    { color: "rgba(0,0,0,.25)" } // tslint:disable-next-line:jsx-no-multiline-js
-                    // tslint:disable-next-line:jsx-curly-spacing
-                  }
-                />
-              ) as any
-              // tslint:disable-next-line:jsx-curly-spacing
+              <Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} /> as any
             }
             placeholder="Email"
             component={InputField}
@@ -41,16 +32,7 @@ class C extends React.PureComponent<FormikProps<FormValues> & Props> {
             name="password"
             type="password"
             prefix={
-              (
-                <Icon
-                  type="lock"
-                  style={
-                    { color: "rgba(0,0,0,.25)" } // tslint:disable-next-line:jsx-no-multiline-js
-                    // tslint:disable-next-line:jsx-curly-spacing
-                  }
-                />
-              ) as any
-              // tslint:disable-next-line:jsx-curly-spacing
+              <Icon type="lock" style={{ color: "rgba(0,0,0,.25)" }} /> as any
             }
             placeholder="Password"
             component={InputField}
@@ -60,16 +42,7 @@ class C extends React.PureComponent<FormikProps<FormValues> & Props> {
             placeholder="Confirm password"
             type="password"
             prefix={
-              (
-                <Icon
-                  type="lock"
-                  style={
-                    { color: "rgba(0,0,0,.25)" } // tslint:disable-next-line:jsx-no-multiline-js
-                    // tslint:disable-next-line:jsx-curly-spacing
-                  }
-                />
-              ) as any
-              // tslint:disable-next-line:jsx-curly-spacing
+              <Icon type="lock" style={{ color: "rgba(0,0,0,.25)" }} /> as any
             }
             component={InputField}
           />
