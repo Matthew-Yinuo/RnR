@@ -1,5 +1,3 @@
-import { error } from "util";
-
 interface Error {
   path: string;
   message: string;

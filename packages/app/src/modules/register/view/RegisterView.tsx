@@ -1,6 +1,6 @@
 import * as React from "react";
 import { withFormik, FormikErrors, FormikProps, Field } from "formik";
-import { validUserSchema } from "@airbnb/common";
+import { registerUserSchema } from "@airbnb/common";
 import { View, Text } from "react-native";
 import { Card, Button } from "react-native-elements";
 import { InputField } from "../../shared/InputField";
@@ -54,7 +54,7 @@ class C extends React.PureComponent<FormikProps<FormValues> & Props> {
 }
 
 export const RegisterView = withFormik<Props, FormValues>({
-  validationSchema: validUserSchema,
+  validationSchema: registerUserSchema,
   mapPropsToValues: () => ({ email: "", password: "" }),
   handleSubmit: async (values, { props, setErrors }) => {
     const errors = await props.submit(values);
