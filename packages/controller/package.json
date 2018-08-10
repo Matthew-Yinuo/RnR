@@ -12,7 +12,9 @@
     "refresh:types": "npm run gen:types && npm run build"
   },
   "dependencies": {
+    "@babel/generator": "^7.0.0-beta.56",
     "@types/react": "^16.4.7",
+    "babel-runtime": "^6.26.0",
     "graphql": "^0.13.2",
     "graphql-tag": "^2.9.2",
     "react": "^16.4.1",

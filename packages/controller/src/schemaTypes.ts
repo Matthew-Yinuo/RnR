@@ -4,6 +4,28 @@
 // This file was automatically generated and should not be edited.
 
 // ====================================================
+// GraphQL mutation operation: LoginUserMutation
+// ====================================================
+
+export interface LoginUserMutation_register {
+  path: string;
+  message: string;
+}
+
+export interface LoginUserMutation {
+  register: LoginUserMutation_register[] | null;
+}
+
+export interface LoginUserMutationVariables {
+  email: string;
+  password: string;
+}
+
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
 // GraphQL mutation operation: RegisterUserMutation
 // ====================================================
 
