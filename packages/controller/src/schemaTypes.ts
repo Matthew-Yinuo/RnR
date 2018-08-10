@@ -1,5 +1,3 @@
-
-
 /* tslint:disable */
 // This file was automatically generated and should not be edited.
 
@@ -7,20 +5,24 @@
 // GraphQL mutation operation: LoginUserMutation
 // ====================================================
 
-export interface LoginUserMutation_register {
+export interface LoginUserMutation_login_errors {
   path: string;
   message: string;
 }
 
+export interface LoginUserMutation_login {
+  errors: LoginUserMutation_login_errors[] | null;
+  sessionId: string | null;
+}
+
 export interface LoginUserMutation {
-  register: LoginUserMutation_register[] | null;
+  login: LoginUserMutation_login;
 }
 
 export interface LoginUserMutationVariables {
   email: string;
   password: string;
 }
-
 
 /* tslint:disable */
 // This file was automatically generated and should not be edited.

@@ -8,6 +8,7 @@ import {
 import { normalizeErrors } from "../../utils/normalizeErrors";
 
 interface Props {
+  onSessionId?: (sessionId: string) => void;
   children: (
     data: {
       submit: (
@@ -25,15 +26,25 @@ class RC extends React.PureComponent<
   submit = async (values: LoginUserMutationVariables) => {
     console.log(values);
     const {
-      data: { login }
+      data: {
+        login: { errors, sessionId }
+      }
     } = await this.props.mutate({
       variables: values
     });
+    console.log("response: ", errors, sessionId);
 
-    if (login) {
-      // show errors here
-      return normalizeErrors(login);
+    if (errors) {
+      // show errors
+      // [{path: 'email': message: 'inval...'}]
+      // {email: 'invalid....'}
+      return normalizeErrors(errors);
     }
+
+    if (sessionId && this.props.onSessionId) {
+      this.props.onSessionId(sessionId);
+    }
+
     return null;
   };
 
@@ -44,9 +55,12 @@ class RC extends React.PureComponent<
 
 const loginUserMutation = gql`
   mutation LoginUserMutation($email: String!, $password: String!) {
-    register(email: $email, password: $password) {
-      path
-      message
+    login(email: $email, password: $password) {
+      errors {
+        path
+        message
+      }
+      sessionId
     }
   }
 `;
