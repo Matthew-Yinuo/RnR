@@ -1,7 +1,6 @@
 import * as React from "react";
-import { Form as FormA, Icon, Button } from "antd";
+import { Form as FormA, Icon } from "antd";
 import { withFormik, FormikProps, Field, Form } from "formik";
-import { realEmailSchema } from "@airbnb/common";
 import { InputField } from "../../shared/inputField";
 import { Link } from "react-router-dom";
 
@@ -32,15 +31,17 @@ class RC extends React.PureComponent<FormikProps<FormValues> & Props> {
             placeholder="Email"
             component={InputField}
           />
+          <FormItem>
+            Or <Link to="/login">Return to login!</Link>
+          </FormItem>
         </div>
       </Form>
     );
   }
 }
 
-export const LoginView = withFormik<Props, FormValues>({
-  validationSchema: realEmailSchema,
-  mapPropsToValues: () => ({ email: "", password: "" }),
+export const ForgotPasswordView = withFormik<Props, FormValues>({
+  mapPropsToValues: () => ({ email: "" }),
   handleSubmit: async (values, { props, setErrors }) => {
     const errors = await props.submit(values);
     if (errors) {

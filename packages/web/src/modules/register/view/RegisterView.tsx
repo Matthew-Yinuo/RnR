@@ -1,9 +1,10 @@
 import * as React from "react";
 import { Form as FormA, Icon, Button } from "antd";
-import { withFormik, FormikErrors, FormikProps, Field, Form } from "formik";
+import { withFormik, FormikProps, Field, Form } from "formik";
 import { registerUserSchema } from "@airbnb/common";
 import { InputField } from "../../shared/inputField";
 import { Link } from "react-router-dom";
+import { NormalizedErrorMap } from "@airbnb/controller";
 
 const FormItem = FormA.Item;
 
@@ -13,7 +14,7 @@ interface FormValues {
 }
 
 interface Props {
-  submit: (values: FormValues) => Promise<FormikErrors<FormValues> | null>;
+  submit: (values: FormValues) => Promise<NormalizedErrorMap | null>;
 }
 
 class C extends React.PureComponent<FormikProps<FormValues> & Props> {
