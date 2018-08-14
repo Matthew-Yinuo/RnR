@@ -4,6 +4,7 @@ import { withFormik, FormikProps, Field, Form } from "formik";
 import { loginUserSchema } from "@airbnb/common";
 import { InputField } from "../../shared/inputField";
 import { Link } from "react-router-dom";
+import { NormalizedErrorMap } from "@airbnb/controller";
 
 const FormItem = FormA.Item;
 
@@ -13,11 +14,7 @@ interface FormValues {
 }
 
 interface Props {
-  submit: (
-    values: FormValues
-  ) => Promise<{
-    [key: string]: string;
-  } | null>;
+  submit: (values: FormValues) => Promise<NormalizedErrorMap | null>;
 }
 
 class RC extends React.PureComponent<FormikProps<FormValues> & Props> {
@@ -43,9 +40,7 @@ class RC extends React.PureComponent<FormikProps<FormValues> & Props> {
             component={InputField}
           />
           <FormItem>
-            <a className="login-form-forgot" href="">
-              Forgot password
-            </a>
+            <Link to="/forgotpassword">Forgot password</Link>
           </FormItem>
           <FormItem>
             <Button

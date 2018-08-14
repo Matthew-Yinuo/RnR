@@ -1,3 +1,5 @@
+
+
 /* tslint:disable */
 // This file was automatically generated and should not be edited.
 
@@ -23,6 +25,7 @@ export interface LoginUserMutationVariables {
   email: string;
   password: string;
 }
+
 
 /* tslint:disable */
 // This file was automatically generated and should not be edited.
