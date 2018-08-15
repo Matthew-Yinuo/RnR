@@ -36,3 +36,14 @@ export const loginUserSchema = yup.object().shape({
   email: loginEmailValidation,
   password: loginPassValidation
 });
+<<<<<<< HEAD
+=======
+
+export const realEmailSchema = yup.object().shape({
+  email: realEmailValidation
+});
+
+export const changePasswordSchema = yup.object().shape({
+  newPassword: registerPassValidation
+});
+>>>>>>> 16_ChangePassword_Controller
