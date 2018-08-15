@@ -29,15 +29,12 @@ class RC extends React.PureComponent<
       variables: values
     });
     console.log("response: ", response);
-
     return null;
   };
-
   render() {
     return this.props.children({ submit: this.submit });
   }
 }
-
 const forgotPasswordMutation = gql`
   mutation SendForgotPasswordEmailMutation($email: String!) {
     sendForgotPasswordEmail(email: $email)

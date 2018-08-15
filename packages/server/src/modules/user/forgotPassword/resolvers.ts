@@ -1,20 +1,14 @@
-import * as yup from "yup";
 import * as bcrypt from "bcryptjs";
-
 import { ResolverMap } from "../../../types/graphql-utils";
 import { createForgotPasswordLink } from "../../../utils/createForgotPasswordLink";
 import { User } from "../../../entity/User";
 import { expiredKeyError } from "./errorMessages";
 import { forgotPasswordPrefix } from "../../../constants";
-import { registerPassValidation } from "@airbnb/common";
+import { changePasswordSchema } from "@airbnb/common";
 import { formatYupError } from "../../../utils/formatYupError";
 import { sendEmail } from "../../../utils/sendEmail";
 // 20 minutes
 // lock account
-
-const schema = yup.object().shape({
-  newPassword: registerPassValidation
-});
 
 export const resolvers: ResolverMap = {
   Mutation: {
@@ -53,14 +47,17 @@ export const resolvers: ResolverMap = {
       if (!userId) {
         return [
           {
-            path: "key",
+            path: "newPassword",
             message: expiredKeyError
           }
         ];
       }
 
       try {
-        await schema.validate({ newPassword }, { abortEarly: false });
+        await changePasswordSchema.validate(
+          { newPassword },
+          { abortEarly: false }
+        );
       } catch (err) {
         return formatYupError(err);
       }

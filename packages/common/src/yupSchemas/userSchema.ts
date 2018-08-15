@@ -47,3 +47,7 @@ export const loginUserSchema = yup.object().shape({
 export const realEmailSchema = yup.object().shape({
   email: realEmailValidation
 });
+
+export const changePasswordSchema = yup.object().shape({
+  newPassword: registerPassValidation
+});
