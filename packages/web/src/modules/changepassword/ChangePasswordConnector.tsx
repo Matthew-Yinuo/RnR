@@ -4,13 +4,10 @@ import { ChangePasswordView } from "./view/ChangePasswordView";
 import { ChangePasswordController } from "@airbnb/controller";
 
 export class ChangePasswordConnector extends React.PureComponent<
-  RouteComponentProps<{
-    key: string;
-  }>
+  RouteComponentProps<{ key: string }>
 > {
-  submit = async (values: any) => {
-    console.log(values);
-    return null;
+  onFinish = () => {
+    this.props.history.push("/login");
   };
 
   render() {

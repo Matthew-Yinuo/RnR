@@ -2,7 +2,10 @@ import * as React from "react";
 import { Form as FormA, Icon, Button } from "antd";
 import { withFormik, FormikProps, Field, Form } from "formik";
 import { InputField } from "../../shared/inputField";
-
+import {
+  NormalizedErrorMap,
+  ForgotPasswordChangeMutationVariables
+} from "@airbnb/controller";
 import { changePasswordSchema } from "@airbnb/common";
 
 const FormItem = FormA.Item;
@@ -15,10 +18,8 @@ interface Props {
   onFinish: () => void;
   token: string;
   submit: (
-    values: FormValues
-  ) => Promise<{
-    [key: string]: string;
-  } | null>;
+    values: ForgotPasswordChangeMutationVariables
+  ) => Promise<NormalizedErrorMap | null>;
 }
 
 class RC extends React.PureComponent<FormikProps<FormValues> & Props> {
@@ -57,6 +58,8 @@ export const ChangePasswordView = withFormik<Props, FormValues>({
     const errors = await props.submit({ newPassword, key: props.token });
     if (errors) {
       setErrors(errors);
+    } else {
+      props.onFinish();
     }
   }
 })(RC);
