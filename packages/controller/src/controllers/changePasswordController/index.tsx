@@ -18,7 +18,7 @@ interface Props {
   ) => JSX.Element | null;
 }
 
-class C extends React.PureComponent<
+class RC extends React.PureComponent<
   ChildMutateProps<
     Props,
     ForgotPasswordChangeMutation,
@@ -60,4 +60,4 @@ export const ChangePasswordController: any = graphql<
   Props,
   ForgotPasswordChangeMutation,
   ForgotPasswordChangeMutationVariables
->(forgotPasswordChangeMutation)(C);
+>(forgotPasswordChangeMutation)(RC);

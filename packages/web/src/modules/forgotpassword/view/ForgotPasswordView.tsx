@@ -3,6 +3,7 @@ import { Form as FormA, Icon } from "antd";
 import { withFormik, FormikProps, Field, Form } from "formik";
 import { InputField } from "../../shared/inputField";
 import { Link } from "react-router-dom";
+import { NormalizedErrorMap } from "@airbnb/controller";
 
 const FormItem = FormA.Item;
 
@@ -11,11 +12,8 @@ interface FormValues {
 }
 
 interface Props {
-  submit: (
-    values: FormValues
-  ) => Promise<{
-    [key: string]: string;
-  } | null>;
+  onFinish: () => void;
+  submit: (values: FormValues) => Promise<NormalizedErrorMap | null>;
 }
 
 class RC extends React.PureComponent<FormikProps<FormValues> & Props> {
@@ -46,6 +44,8 @@ export const ForgotPasswordView = withFormik<Props, FormValues>({
     const errors = await props.submit(values);
     if (errors) {
       setErrors(errors);
+    } else {
+      props.onFinish();
     }
   }
 })(RC);

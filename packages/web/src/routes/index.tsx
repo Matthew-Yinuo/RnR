@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import { RegisterConnector } from "../modules/register/RegisterConnector";
 import { LoginConnector } from "../modules/login/LoginConnector";
+import { ConfirmationPage } from "../modules/ConfirmationPage";
 import { ForgotPasswordConnector } from "../modules/forgotpassword/ForgotPasswordConnector";
 import { ChangePasswordConnector } from "../modules/changepassword/ChangePasswordConnector";
 
@@ -18,9 +19,10 @@ export const Routes = () => (
       />
       <Route
         exact={true}
-        path="/changepassword/:key"
+        path="/change-password/:key"
         component={ChangePasswordConnector}
       />
+      <Route path="/confirm" component={ConfirmationPage} />
     </Switch>
   </BrowserRouter>
 );
