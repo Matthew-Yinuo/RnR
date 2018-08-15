@@ -18,13 +18,6 @@ export const registerEmailValidation = yup
   .email("E-mail is not valid!")
   .required();
 
-export const realEmailValidation = yup
-  .string()
-  .min(6, emailmin)
-  .max(50, emailmax)
-  .email("E-mail is not valid!")
-  .required();
-
 export const loginPassValidation = yup.string().required();
 
 export const loginEmailValidation = yup
@@ -42,8 +35,4 @@ export const registerUserSchema = yup.object().shape({
 export const loginUserSchema = yup.object().shape({
   email: loginEmailValidation,
   password: loginPassValidation
-});
-
-export const realEmailSchema = yup.object().shape({
-  email: realEmailValidation
 });

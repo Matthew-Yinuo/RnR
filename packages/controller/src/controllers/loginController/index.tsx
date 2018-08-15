@@ -6,7 +6,6 @@ import {
   LoginUserMutationVariables
 } from "../../schemaTypes";
 import { normalizeErrors } from "../../utils/normalizeErrors";
-import { NormalizedErrorMap } from "../../types/NormalizedErrorMap";
 
 interface Props {
   onSessionId?: (sessionId: string) => void;
@@ -14,7 +13,9 @@ interface Props {
     data: {
       submit: (
         values: LoginUserMutationVariables
-      ) => Promise<NormalizedErrorMap | null>;
+      ) => Promise<{
+        [key: string]: string;
+      } | null>;
     }
   ) => JSX.Element | null;
 }
