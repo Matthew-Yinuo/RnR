@@ -24,13 +24,10 @@ export class ChangePasswordConnector extends React.PureComponent<
       <ChangePasswordController>
         {({ submit }: { submit: any }) => (
           <ChangePasswordView
-            // tslint:disable-next-line:jsx-no-lambda
-            submit={async ({ newPassword }) =>
-              submit({
-                key,
-                newPassword
-              })
-            }
+            onFinish={this.onFinish}
+            key={key}
+            token={key}
+            submit={submit}
           />
         )}
       </ChangePasswordController>

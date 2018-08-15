@@ -12,6 +12,8 @@ interface FormValues {
 }
 
 interface Props {
+  onFinish: () => void;
+  token: string;
   submit: (
     values: FormValues
   ) => Promise<{
@@ -51,8 +53,8 @@ class RC extends React.PureComponent<FormikProps<FormValues> & Props> {
 export const ChangePasswordView = withFormik<Props, FormValues>({
   validationSchema: changePasswordSchema,
   mapPropsToValues: () => ({ newPassword: "" }),
-  handleSubmit: async (values, { props, setErrors }) => {
-    const errors = await props.submit(values);
+  handleSubmit: async ({ newPassword }, { props, setErrors }) => {
+    const errors = await props.submit({ newPassword, key: props.token });
     if (errors) {
       setErrors(errors);
     }
