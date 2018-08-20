@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 import * as React from "react";
 import { graphql, ChildMutateProps } from "react-apollo";
 import gql from "graphql-tag";
@@ -48,4 +46,3 @@ export const ForgotPasswordController: any = graphql<
   SendForgotPasswordEmailMutation,
   SendForgotPasswordEmailMutationVariables
 >(forgotPasswordMutation)(RC);
->>>>>>> 16_ChangePassword_Controller
