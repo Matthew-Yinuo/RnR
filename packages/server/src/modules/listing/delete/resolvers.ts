@@ -4,9 +4,9 @@ import { Listing } from "../../../entity/Listing";
 export const resolvers: ResolverMap = {
   Mutation: {
     deleteListing: async (_, { id }, { session }) => {
-      if (!session.userId) {
-        throw new Error("not authed");
-      }
+      // if (!session.userId) {
+      //   throw new Error("not authed");
+      // }
 
       const listing = await Listing.findOne({
         where: { id }
