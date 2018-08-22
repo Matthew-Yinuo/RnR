@@ -2,9 +2,9 @@ import * as React from "react";
 import { RouteComponentProps } from "react-router-dom";
 import { Form as AntForm, Button } from "antd";
 import { Form, Formik } from "formik";
-import { Page1 } from "./view/Page1";
-import { Page2 } from "./view/Page2";
-import { Page3 } from "./view/Page3";
+import { Page1 } from "./ui/Page1";
+import { Page2 } from "./ui/Page2";
+import { Page3 } from "./ui/Page3";
 
 const FormItem = AntForm.Item;
 
@@ -71,15 +71,22 @@ export class CreateListingConnector extends React.PureComponent<
             <div style={{ width: 400, margin: "auto" }}>
               {pages[this.state.page]}
               <FormItem>
-                {this.state.page === pages.length - 1 ? (
-                  <Button type="primary" htmlType="submit">
-                    create listing
-                  </Button>
-                ) : (
-                  <Button type="primary" onClick={this.nextPage}>
-                    next page
-                  </Button>
-                )}
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "flex-end"
+                  }}
+                >
+                  {this.state.page === pages.length - 1 ? (
+                    <Button type="primary" htmlType="submit">
+                      create listing
+                    </Button>
+                  ) : (
+                    <Button type="primary" onClick={this.nextPage}>
+                      next page
+                    </Button>
+                  )}
+                </div>
               </FormItem>
             </div>
           </Form>
