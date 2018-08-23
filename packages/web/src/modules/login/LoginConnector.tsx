@@ -10,10 +10,15 @@ export class LoginConnector extends React.PureComponent<
   RouteComponentProps<{}>
 > {
   onFinish = () => {
-    this.props.history.push("/confirm/homepage", {
-      message: "this is the login page"
+    const {
+      history,
+      location: { state }
+    } = this.props;
+    if (state && state.next) {
+      return history.push(state.next);
+    }
+    history.push("/");
     });
-  };
 
   render() {
     return (
