@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
     "outDir": "dist",
     "module": "esnext",
     "target": "es5",
@@ -18,6 +17,10 @@
     "noUnusedLocals": true,
     "types": ["jest", "node", "react", "react-dom", "react-router-dom"],
     "skipLibCheck": true,
+    "baseUrl": "..",
+    "paths": {
+      "@airbnb/*": ["./*/src"]
+    },
     "declaration": true
   },
   "exclude": [
