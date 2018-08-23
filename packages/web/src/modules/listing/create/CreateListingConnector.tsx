@@ -1,10 +1,11 @@
 import * as React from "react";
 import { RouteComponentProps } from "react-router-dom";
 import { Form as AntForm, Button } from "antd";
-import { Form, Formik } from "formik";
-import { Page1 } from "./ui/Page1";
-import { Page2 } from "./ui/Page2";
-import { Page3 } from "./ui/Page3";
+import { Form, Formik, FormikActions } from "formik";
+import { Page1 } from "./view/Page1";
+import { Page2 } from "./view/Page2";
+import { Page3 } from "./view/Page3";
+import { withCreateListing, WithCreateListingProps } from "@airbnb/controller";
 
 const FormItem = AntForm.Item;
 
@@ -27,6 +28,7 @@ interface FormValues {
   latitude: number;
   longitude: number;
   amenities: string[];
+  ID: any;
 }
 
 interface State {
@@ -36,16 +38,20 @@ interface State {
 // tslint:disable-next-line:jsx-key
 const pages = [<Page1 />, <Page2 />, <Page3 />];
 
-export class CreateListingConnector extends React.PureComponent<
-  RouteComponentProps<{}>,
+class RC extends React.PureComponent<
+  RouteComponentProps<{}> & WithCreateListingProps,
   State
 > {
   state = {
     page: 0
   };
 
-  submit = (values: any) => {
-    console.log("values: ", values);
+  submit = async (
+    values: FormValues,
+    { setSubmitting }: FormikActions<FormValues>
+  ) => {
+    await this.props.createListing(values);
+    setSubmitting(false);
   };
 
   nextPage = () => this.setState(state => ({ page: state.page + 1 }));
@@ -62,27 +68,33 @@ export class CreateListingConnector extends React.PureComponent<
           guests: 0,
           latitude: 0,
           longitude: 0,
-          amenities: []
+          amenities: [],
+          ID: ""
         }}
         onSubmit={this.submit}
       >
-        {() => (
+        {({ isSubmitting, isValid }) => (
           <Form style={{ display: "flex" }}>
             <div style={{ width: 400, margin: "auto" }}>
               {pages[this.state.page]}
               <FormItem>
-                <div
-                  style={{
-                    display: "flex",
-                    justifyContent: "flex-end"
-                  }}
-                >
+                <div style={{ display: "flex", justifyContent: "flex-end" }}>
                   {this.state.page === pages.length - 1 ? (
-                    <Button type="primary" htmlType="submit">
-                      create listing
-                    </Button>
+                    <div>
+                      <Button
+                        type="primary"
+                        htmlType="submit"
+                        disabled={isSubmitting}
+                      >
+                        create listing
+                      </Button>
+                    </div>
                   ) : (
-                    <Button type="primary" onClick={this.nextPage}>
+                    <Button
+                      type="primary"
+                      htmlType="button"
+                      onClick={this.nextPage}
+                    >
                       next page
                     </Button>
                   )}
@@ -95,3 +107,4 @@ export class CreateListingConnector extends React.PureComponent<
     );
   }
 }
+export const CreateListingConnector = withCreateListing(RC);

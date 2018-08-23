@@ -12,7 +12,7 @@ import { Listing } from "./Listing";
 @Entity("users")
 export class User extends BaseEntity {
   @PrimaryGeneratedColumn("uuid")
-  id: string;
+  id: any;
 
   @Column("varchar", { length: 255 })
   email: string;

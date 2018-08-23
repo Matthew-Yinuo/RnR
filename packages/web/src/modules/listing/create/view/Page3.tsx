@@ -2,7 +2,7 @@ import * as React from "react";
 import { Field } from "formik";
 
 import { InputField } from "../../../../modules/shared/inputField";
-import { TagField } from "../../../shared/TagField";
+import { TagField } from "../../../shared/tagField";
 
 export const Page3 = () => (
   <>
