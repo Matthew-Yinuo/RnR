@@ -2,10 +2,12 @@
 import * as React from "react";
 import gql from "graphql-tag";
 import { graphql } from "react-apollo";
+
 import {
   CreateListingMutation,
   CreateListingMutationVariables
 } from "../../schemaTypes";
+
 export const createListingMutation = gql`
   mutation CreateListingMutation(
     $name: String!
@@ -36,15 +38,15 @@ export const createListingMutation = gql`
   }
 `;
 
-export interface WithCreateListingProps {
+export interface WithCreateListing {
   createListing: (variables: CreateListingMutationVariables) => void;
 }
 
-export const withCreateListing: any = graphql<
+export const withCreateListing = graphql<
   any,
   CreateListingMutation,
   CreateListingMutationVariables,
-  WithCreateListingProps
+  WithCreateListing
 >(createListingMutation, {
   props: ({ mutate }) => ({
     createListing: async variables => {
@@ -55,6 +57,7 @@ export const withCreateListing: any = graphql<
       const response = await mutate({
         variables
       });
+
       console.log(response);
     }
   })

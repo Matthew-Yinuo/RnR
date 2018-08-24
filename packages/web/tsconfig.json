@@ -17,10 +17,7 @@
     "suppressImplicitAnyIndexErrors": true,
     "noUnusedLocals": true,
     "skipLibCheck": true,
-    "baseUrl": "..",
-    "paths": {
-      "@airbnb/*": ["./*/src"]
-    },
+    "baseUrl": ".",
     "types": ["jest", "node", "react", "react-dom", "react-router-dom"]
   },
   "exclude": [

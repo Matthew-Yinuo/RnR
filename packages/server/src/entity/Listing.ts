@@ -10,7 +10,7 @@ import { User } from "./User";
 @Entity("listings")
 export class Listing extends BaseEntity {
   @PrimaryGeneratedColumn("uuid")
-  id: any;
+  id: string;
 
   @Column("varchar", { length: 100 })
   name: string;
