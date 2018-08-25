@@ -78,7 +78,12 @@ class RC extends React.PureComponent<
             <div style={{ width: 400, margin: "auto" }}>
               {pages[this.state.page]}
               <FormItem>
-                <div style={{ display: "flex", justifyContent: "flex-end" }}>
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "flex-end"
+                  }}
+                >
                   {this.state.page === pages.length - 1 ? (
                     <div>
                       <Button
@@ -90,11 +95,7 @@ class RC extends React.PureComponent<
                       </Button>
                     </div>
                   ) : (
-                    <Button
-                      type="primary"
-                      htmlType="button"
-                      onClick={this.nextPage}
-                    >
+                    <Button type="primary" onClick={this.nextPage}>
                       next page
                     </Button>
                   )}
@@ -107,4 +108,5 @@ class RC extends React.PureComponent<
     );
   }
 }
+
 export const CreateListingConnector = withCreateListing(RC);

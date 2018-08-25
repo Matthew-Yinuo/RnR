@@ -1,5 +1,4 @@
 input CreateListingInput {
-  id: ID!
   name: String!
   category: String!
   description: String!
