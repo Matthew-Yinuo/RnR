@@ -1,6 +1,8 @@
 import * as React from "react";
 import { Field } from "formik";
 import { InputField } from "../../../../modules/shared/inputField";
+import { DropzoneField } from "../../../../modules/shared/dropzoneField";
+
 export const Page1 = () => (
   <>
     <Field name="name" placeholder="Name" component={InputField} />
@@ -10,5 +12,6 @@ export const Page1 = () => (
       placeholder="Description"
       component={InputField}
     />
+    <Field name="picture" component={DropzoneField} />
   </>
 );
