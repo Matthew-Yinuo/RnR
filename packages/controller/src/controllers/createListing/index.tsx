@@ -11,6 +11,7 @@ import {
 export const createListingMutation = gql`
   mutation CreateListingMutation(
     $name: String!
+    $picture: Upload
     $category: String!
     $description: String!
     $price: Int!
@@ -24,6 +25,7 @@ export const createListingMutation = gql`
     createListing(
       input: {
         name: $name
+        picture: $picture
         category: $category
         description: $description
         price: $price
@@ -38,15 +40,15 @@ export const createListingMutation = gql`
   }
 `;
 
-export interface WithCreateListing {
+export interface WithCreateListingProps {
   createListing: (variables: CreateListingMutationVariables) => void;
 }
 
-export const withCreateListing = graphql<
+export const withCreateListing: any = graphql<
   any,
   CreateListingMutation,
   CreateListingMutationVariables,
-  WithCreateListing
+  WithCreateListingProps
 >(createListingMutation, {
   props: ({ mutate }) => ({
     createListing: async variables => {

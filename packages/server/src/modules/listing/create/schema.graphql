@@ -1,8 +1,8 @@
 scalar Upload
 
 input CreateListingInput {
-  name: String!
   picture: Upload
+  name: String!
   category: String!
   description: String!
   price: Int!
