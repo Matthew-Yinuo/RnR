@@ -20,7 +20,6 @@ export const createListingMutation = gql`
     $latitude: Float!
     $longitude: Float!
     $amenities: [String!]!
-    $ID: ID!
   ) {
     createListing(
       input: {
@@ -34,7 +33,6 @@ export const createListingMutation = gql`
         latitude: $latitude
         longitude: $longitude
         amenities: $amenities
-        id: $ID
       }
     )
   }
