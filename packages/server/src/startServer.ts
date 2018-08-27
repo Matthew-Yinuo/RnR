@@ -14,6 +14,7 @@ import { redisSessionPrefix } from "./constants";
 import { createTestConn } from "./testUtils/createTestConn";
 import { middleware } from "./middleware";
 import * as express from "express";
+import { userLoader } from "./loaders/UserLoader";
 
 const SESSION_SECRET = "ajslkjalksjdfkl";
 const RedisStore = connectRedis(session as any);
@@ -33,7 +34,8 @@ export const startServer = async () => {
       redis,
       url: request.protocol + "://" + request.get("host"),
       session: request.session,
-      req: request
+      req: request,
+      userLoader: userLoader()
     })
   });
   server.express.use(
