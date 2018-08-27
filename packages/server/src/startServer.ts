@@ -13,6 +13,7 @@ import { genSchema } from "./utils/genSchema";
 import { redisSessionPrefix } from "./constants";
 import { createTestConn } from "./testUtils/createTestConn";
 import { middleware } from "./middleware";
+import * as express from "express";
 
 const SESSION_SECRET = "ajslkjalksjdfkl";
 const RedisStore = connectRedis(session as any);
@@ -64,6 +65,8 @@ export const startServer = async () => {
     } as any)
   );
 
+  server.express.use("/images", express.static("images"));
+
   const cors = {
     credentials: true,
     origin:
@@ -81,7 +84,7 @@ export const startServer = async () => {
     await conn.runMigrations();
   }
 
-  const port = process.env.PORT || 4006;
+  const port = process.env.PORT || 4000;
   const app = await server.start({
     cors,
     port: process.env.NODE_ENV === "test" ? 0 : port
