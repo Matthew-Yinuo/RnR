@@ -18,8 +18,8 @@ const storeUpload = async (stream: any, mimetype: string): Promise<any> => {
 };
 
 const processUpload = async (upload: any) => {
-  const { stream, filename, mimetype } = await upload;
-  const { id } = await storeUpload({ stream, mimetype });
+  const { stream, mimetype } = await upload;
+  const { id } = await storeUpload(stream, mimetype);
   return id;
 };
 
