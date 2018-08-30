@@ -1,0 +1,9 @@
+input MessageInput {
+  user: User!
+  listingId: String!
+  text: String!
+}
+
+type Query {
+  messages(listingId: String!): [Message!]!
+}
