@@ -7,16 +7,15 @@ import { ConfirmationPage } from "../modules/ConfirmationPage";
 import { ForgotPasswordConnector } from "../modules/forgotpassword/ForgotPasswordConnector";
 import { ChangePasswordConnector } from "../modules/changepassword/ChangePasswordConnector";
 import { CreateListingConnector } from "../modules/listing/create/CreateListingConnector";
+import { ViewListingConnector } from "../modules/listing/view/ViewListingConnector";
 import { FindListingsConnector } from "../modules/listing/find/FindListingsConnector";
 import { Logout } from "../modules/logout";
-import { TestSub } from "../modules/TestSub";
 
 export const Routes = () => (
   <BrowserRouter>
     <Switch>
       <Route exact={true} path="/register" component={RegisterConnector} />
       <Route exact={true} path="/login" component={LoginConnector} />
-      <Route path="/test-sub" component={TestSub} />
       <Route path="/logout" component={Logout} />
       <Route
         exact={true}
@@ -30,6 +29,7 @@ export const Routes = () => (
       />
       <Route path="/confirm" component={ConfirmationPage} />
       <Route path="/listings" component={FindListingsConnector} />
+      <Route path="/listing/:listingId" component={ViewListingConnector} />
       <AuthRoute path="/create-listing" component={CreateListingConnector} />
     </Switch>
   </BrowserRouter>
