@@ -1,10 +1,10 @@
 import * as React from "react";
+import { ViewMessages } from "@airbnb/controller";
 import { RouteComponentProps } from "react-router-dom";
+import { InputBar } from "./InputBar";
 
-export class MessageConnector extends React.PureComponent<
-  RouteComponentProps<{
-    listingId: string;
-  }>
+export class ViewListingConnector extends React.PureComponent<
+  RouteComponentProps<{ listingId: string }>
 > {
   render() {
     const {
@@ -13,17 +13,22 @@ export class MessageConnector extends React.PureComponent<
       }
     } = this.props;
     return (
-      <ViewListing listingId={listingId}>
-        {data => {
-          console.log(data);
-
-          if (!data.listing) {
+      <ViewMessages listingId={listingId}>
+        {({ loading, messages }) => {
+          if (loading) {
             return <div>...loading</div>;
           }
 
-          return <div>{data.listing.name}</div>;
+          return (
+            <div>
+              {messages.map((m, i) => (
+                <div key={`${i}-lm`}>{m.text}</div>
+              ))}
+              <InputBar listingId={listingId} />
+            </div>
+          );
         }}
-      </ViewListing>
+      </ViewMessages>
     );
   }
 }
