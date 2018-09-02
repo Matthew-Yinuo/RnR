@@ -1,14 +1,12 @@
 import * as React from "react";
-import { ViewMessages } from "@airbnb/controller";
 import { RouteComponentProps } from "react-router-dom";
-<<<<<<< HEAD
 import { ViewMessages } from "@airbnb/controller";
-=======
 import { InputBar } from "./InputBar";
->>>>>>> 36_ApolloCreateMessages
 
-export class ViewListingConnector extends React.PureComponent<
-  RouteComponentProps<{ listingId: string }>
+export class MessageConnector extends React.PureComponent<
+  RouteComponentProps<{
+    listingId: string;
+  }>
 > {
   render() {
     const {
@@ -28,10 +26,7 @@ export class ViewListingConnector extends React.PureComponent<
               {messages.map((m, i) => (
                 <div key={`${i}-lm`}>{m.text}</div>
               ))}
-<<<<<<< HEAD
-=======
               <InputBar listingId={listingId} />
->>>>>>> 36_ApolloCreateMessages
             </div>
           );
         }}
