@@ -1,5 +1,9 @@
 import * as React from "react";
+<<<<<<< HEAD
 import { ViewListings } from "@airbnb/controller";
+=======
+import { ViewListing } from "@abb/controller";
+>>>>>>> 36_ApolloCreateMessages
 import { RouteComponentProps, Link } from "react-router-dom";
 
 export class ViewListingConnector extends React.PureComponent<
