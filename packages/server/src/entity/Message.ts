@@ -19,11 +19,11 @@ export class Message extends BaseEntity {
   @Column("uuid")
   userId: string;
 
-  @Column("uuid")
-  listingId: string;
-
   @ManyToOne(() => User)
   user: User;
+
+  @Column("uuid")
+  listingId: string;
 
   @ManyToOne(() => Listing)
   listing: Listing;

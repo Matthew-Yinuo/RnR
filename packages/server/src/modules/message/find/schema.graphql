@@ -1,4 +1,4 @@
-input MessageInput {
+type Message {
   user: User!
   listingId: String!
   text: String!

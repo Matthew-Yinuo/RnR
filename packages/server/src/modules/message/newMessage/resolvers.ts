@@ -1,6 +1,6 @@
+import { withFilter } from "graphql-yoga";
 import { ResolverMap } from "../../../types/graphql-utils";
 import { PUBSUB_NEW_MESSAGE } from "../shared/constants";
-import { withFilter } from "graphql-yoga";
 
 export const resolvers: ResolverMap = {
   Subscription: {

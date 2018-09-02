@@ -1,4 +1,3 @@
-import { userLoader } from "./../../../loaders/UserLoader";
 import { ResolverMap } from "../../../types/graphql-utils";
 import { Message } from "../../../entity/Message";
 
