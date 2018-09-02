@@ -9,6 +9,7 @@ import { ChangePasswordConnector } from "../modules/changepassword/ChangePasswor
 import { CreateListingConnector } from "../modules/listing/create/CreateListingConnector";
 import { ViewListingConnector } from "../modules/listing/view/ViewListingConnector";
 import { FindListingsConnector } from "../modules/listing/find/FindListingsConnector";
+import { ViewMessagesConnector } from "../modules/listing/view/ViewMessagesConnector";
 import { Logout } from "../modules/logout";
 
 export const Routes = () => (
@@ -26,6 +27,11 @@ export const Routes = () => (
         exact={true}
         path="/change-password/:key"
         component={ChangePasswordConnector}
+      />
+      <Route
+        exact={true}
+        path="/listing/:listingId/messages"
+        component={ViewMessagesConnector}
       />
       <Route path="/confirm" component={ConfirmationPage} />
       <Route path="/listings" component={FindListingsConnector} />
