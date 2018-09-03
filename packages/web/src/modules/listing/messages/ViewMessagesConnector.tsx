@@ -3,7 +3,7 @@ import { RouteComponentProps } from "react-router-dom";
 import { ViewMessages } from "@airbnb/controller";
 import { InputBar } from "./InputBar";
 
-export class MessageConnector extends React.PureComponent<
+export class MessagesConnector extends React.PureComponent<
   RouteComponentProps<{
     listingId: string;
   }>

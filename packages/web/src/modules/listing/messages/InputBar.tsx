@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Formik, Form, Field } from "formik";
-import { CreateMessage } from "@abb/controller";
-import { InputField } from "../../shared/InputField";
+import { CreateMessage } from "@airbnb/controller";
+import { InputField } from "../../shared/inputField";
 interface FormValues {
   text: string;
 }
