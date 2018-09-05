@@ -21,6 +21,19 @@ export const viewMessagesQuery = gql`
   }
 `;
 
+export const newMessageSubscription = gql`
+  subscription NewMessageSubscription($listingId: String!) {
+    newMessage(listingId: $listingId) {
+      text
+      user {
+        id
+        email
+      }
+      listingId
+    }
+  }
+`;
+
 export interface WithViewMessages {
   messages: ViewMessagesQuery_messages[];
   loading: boolean;
