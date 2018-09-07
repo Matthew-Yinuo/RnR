@@ -1,7 +1,7 @@
 import * as React from "react";
 import { ViewListing, UpdateListing } from "@airbnb/controller";
 import { RouteComponentProps } from "react-router-dom";
-import { ListingForm, defaultListingFormValues } from "../shared/ListingForm";
+import { ListingForm, defaultListingFormValues } from "../shared/listingForm";
 
 export class EditListingConnector extends React.PureComponent<
   RouteComponentProps<{

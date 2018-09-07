@@ -2,7 +2,7 @@ import * as React from "react";
 import { RouteComponentProps } from "react-router-dom";
 import { FormikActions } from "formik";
 import { withCreateListing, WithCreateListingProps } from "@airbnb/controller";
-import { ListingFormValues, ListingForm } from "../shared/ListingForm";
+import { ListingFormValues, ListingForm } from "../shared/listingForm";
 
 class RC extends React.PureComponent<
   RouteComponentProps<{}> & WithCreateListingProps
