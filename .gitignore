@@ -9,3 +9,5 @@ temp/
 dump.rdb
 .env
 dist
+
+*.sql
