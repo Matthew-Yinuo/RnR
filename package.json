@@ -2,8 +2,8 @@
   "private": true,
   "scripts": {
     "postinstall": "yarn run build:server",
-    "build:server": "lerna run build --scope={@airbnb/common,@airbnb/server}",
-    "build:web": "lerna run build --scope={@airbnb/common,@airbnb/controller,@airbnb/web}"
+    "build:server": "lerna run build --scope={@airbnb/server}",
+    "build:web": "lerna run build --scope={@airbnb/controller,@airbnb/web}"
   },
   "workspaces": {
     "packages": [
