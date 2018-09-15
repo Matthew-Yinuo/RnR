@@ -85,7 +85,7 @@ export const startServer = async () => {
   server.express.use("/images", express.static("images"));
 
   const cors = {
-    credentials: true,
+    credentials: false,
     origin:
       process.env.NODE_ENV === "test"
         ? "*"
