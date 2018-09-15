@@ -86,7 +86,7 @@ export const startServer = async () => {
 
   const cors = {
     credentials: true,
-    origin: process.env.FRONTEND_HOST as string
+    origin: "https://quiet-sands-92951.herokuapp.com"
   };
 
   server.express.get("/confirm/:id", confirmEmail);
