@@ -4,22 +4,6 @@
 // This file was automatically generated and should not be edited.
 
 // ====================================================
-// GraphQL query operation: MeQuery
-// ====================================================
-
-export interface MeQuery_me {
-  email: string;
-}
-
-export interface MeQuery {
-  me: MeQuery_me | null;
-}
-
-
-/* tslint:disable */
-// This file was automatically generated and should not be edited.
-
-// ====================================================
 // GraphQL mutation operation: ForgotPasswordChangeMutation
 // ====================================================
 
@@ -35,6 +19,22 @@ export interface ForgotPasswordChangeMutation {
 export interface ForgotPasswordChangeMutationVariables {
   newPassword: string;
   key: string;
+}
+
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
+// GraphQL query operation: MeQuery
+// ====================================================
+
+export interface MeQuery_me {
+  email: string;
+}
+
+export interface MeQuery {
+  me: MeQuery_me | null;
 }
 
 
@@ -67,22 +67,6 @@ export interface CreateListingMutationVariables {
 // This file was automatically generated and should not be edited.
 
 // ====================================================
-// GraphQL mutation operation: CreateMessageMutation
-// ====================================================
-
-export interface CreateMessageMutation {
-  createMessage: boolean;
-}
-
-export interface CreateMessageMutationVariables {
-  message: MessageInput;
-}
-
-
-/* tslint:disable */
-// This file was automatically generated and should not be edited.
-
-// ====================================================
 // GraphQL query operation: FindListingsQuery
 // ====================================================
 
@@ -100,6 +84,22 @@ export interface FindListingsQuery_findListings {
 
 export interface FindListingsQuery {
   findListings: FindListingsQuery_findListings[];
+}
+
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
+// GraphQL mutation operation: CreateMessageMutation
+// ====================================================
+
+export interface CreateMessageMutation {
+  createMessage: boolean;
+}
+
+export interface CreateMessageMutationVariables {
+  message: MessageInput;
 }
 
 
@@ -150,18 +150,6 @@ export interface LoginUserMutationVariables {
 // This file was automatically generated and should not be edited.
 
 // ====================================================
-// GraphQL mutation operation: LogoutMutation
-// ====================================================
-
-export interface LogoutMutation {
-  logout: boolean | null;
-}
-
-
-/* tslint:disable */
-// This file was automatically generated and should not be edited.
-
-// ====================================================
 // GraphQL mutation operation: RegisterUserMutation
 // ====================================================
 
@@ -177,6 +165,56 @@ export interface RegisterUserMutation {
 export interface RegisterUserMutationVariables {
   email: string;
   password: string;
+}
+
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
+// GraphQL mutation operation: LogoutMutation
+// ====================================================
+
+export interface LogoutMutation {
+  logout: boolean | null;
+}
+
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
+// GraphQL query operation: SearchListingsQuery
+// ====================================================
+
+export interface SearchListingsQuery_searchListings_owner {
+  id: string;
+  email: string;
+}
+
+export interface SearchListingsQuery_searchListings {
+  id: string;
+  name: string;
+  category: string;
+  description: string;
+  price: number;
+  beds: number;
+  guests: number;
+  longitude: number;
+  latitude: number;
+  amenities: string[];
+  pictureUrl: string;
+  owner: SearchListingsQuery_searchListings_owner;
+}
+
+export interface SearchListingsQuery {
+  searchListings: SearchListingsQuery_searchListings[];
+}
+
+export interface SearchListingsQueryVariables {
+  input?: SearchListingsInput | null;
+  offset: number;
+  limit: number;
 }
 
 
@@ -293,17 +331,20 @@ export interface NewMessageSubscriptionVariables {
 // START Enums and Input Objects
 //==============================================================
 
-/**
- * 
- */
+// 
 export interface MessageInput {
   text: string;
   listingId: string;
 }
 
-/**
- * 
- */
+// 
+export interface SearchListingsInput {
+  guests?: number | null;
+  beds?: number | null;
+  name?: string | null;
+}
+
+// 
 export interface UpdateListingInput {
   name?: string | null;
   picture?: any | null;
