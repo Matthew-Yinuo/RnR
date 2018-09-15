@@ -6,6 +6,7 @@ export * from "./controllers/forgotPasswordController";
 export * from "./controllers/createListing";
 export * from "./controllers/viewListing";
 export * from "./controllers/findListings";
+export * from "./controllers/searchListings";
 export * from "./controllers/updateListing";
 export * from "./controllers/createMessages";
 export * from "./controllers/viewMessages";
