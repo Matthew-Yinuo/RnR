@@ -10,6 +10,7 @@ import {
   ActivityIndicator
 } from "react-native";
 import { SearchListings } from "@airbnb/controller";
+import { Link } from "react-router-native";
 
 interface State {
   name: string;
