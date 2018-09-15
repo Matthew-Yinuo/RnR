@@ -86,7 +86,7 @@ export const startServer = async () => {
 
   const cors = {
     credentials: true,
-    origin: "https://quiet-sands-92951.herokuapp.com"
+    origin: "https://festive-shannon-eea836.netlify.com"
   };
 
   server.express.get("/confirm/:id", confirmEmail);
