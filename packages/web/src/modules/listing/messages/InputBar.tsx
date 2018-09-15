@@ -14,7 +14,7 @@ export class InputBar extends React.PureComponent<Props> {
     return (
       <CreateMessage>
         {({ createMessage }) => (
-          <Formik<{}, FormValues>
+          <Formik<FormValues>
             initialValues={{ text: "" }}
             onSubmit={async ({ text }, { resetForm }) => {
               await createMessage({
