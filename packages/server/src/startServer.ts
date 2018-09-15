@@ -86,7 +86,7 @@ export const startServer = async () => {
 
   const cors = {
     credentials: true,
-    origin: "https://festive-shannon-eea836.netlify.com"
+    origin: process.env.FRONTEND_HOST as string
   };
 
   server.express.get("/confirm/:id", confirmEmail);
