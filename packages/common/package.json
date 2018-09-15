@@ -13,7 +13,7 @@
     "shx": "^0.3.2",
     "tslint": "^5.10.0",
     "tslint-config-prettier": "^1.13.0",
-    "typescript": "^2.9.2"
+    "typescript": "^3.0.3"
   },
   "dependencies": {
     "yup": "^0.25.1"

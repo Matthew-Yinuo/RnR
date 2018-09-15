@@ -18,7 +18,8 @@
     "react-apollo": "^2.1.7",
     "react-native": "https://github.com/expo/react-native/archive/sdk-27.0.0.tar.gz",
     "react-native-elements": "1.0.0-beta5",
-    "react-router-native": "^4.3.0"
+    "react-router-native": "^4.3.0",
+    "typescript": "3.0.3"
   },
   "devDependencies": {
     "@types/apollo-upload-client": "^8.1.0",
