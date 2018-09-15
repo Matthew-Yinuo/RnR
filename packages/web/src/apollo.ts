@@ -6,13 +6,13 @@ import { WebSocketLink } from "apollo-link-ws";
 import { getMainDefinition } from "apollo-utilities";
 
 const httpLink = createUploadLink({
-  uri: "https://quiet-sands-92951.herokuapp.com",
-  credentials: "same-origin"
+  uri: process.env.REACT_APP_SERVER_URL,
+  credentials: "include"
 });
 
 // Create a WebSocket link:
 const wsLink = new WebSocketLink({
-  uri: "wss://quiet-sands-92951.herokuapp.com",
+  uri: process.env.REACT_APP_SERVER_WS_URL as string,
   options: {
     reconnect: true
   }
