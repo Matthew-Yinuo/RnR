@@ -89,7 +89,7 @@ export const startServer = async () => {
     origin:
       process.env.NODE_ENV === "test"
         ? "*"
-        : (process.env.FRONTEND_HOST as string)
+        : "https://festive-shannon-eea836.netlify.com"
   };
 
   server.express.get("/confirm/:id", confirmEmail);
