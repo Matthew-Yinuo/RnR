@@ -85,8 +85,8 @@ export const startServer = async () => {
   server.express.use("/images", express.static("images"));
 
   const cors = {
-    credentials: false,
-    origin: "*"
+    credentials: true,
+    origin: process.env.FRONTEND_HOST as string
   };
 
   server.express.get("/confirm/:id", confirmEmail);
