@@ -9,7 +9,7 @@ import { ChangePasswordConnector } from "../modules/changepassword/ChangePasswor
 import { CreateListingConnector } from "../modules/listing/create/CreateListingConnector";
 import { ViewListingConnector } from "../modules/listing/view/ViewListingConnector";
 import { FindListingsConnector } from "../modules/listing/find/FindListingsConnector";
-import { MessagesConnector } from "../modules/listing/messages/ViewMessagesConnector";
+import { MessageConnector } from "../modules/listing/messages/MessageConnector";
 import { EditListingConnector } from "../modules/listing/edit/EditListingConnector";
 import { Logout } from "../modules/logout";
 
@@ -32,7 +32,7 @@ export const Routes = () => (
       <Route
         exact={true}
         path="/listing/:listingId/messages"
-        component={MessagesConnector}
+        component={MessageConnector}
       />
       <Route path="/confirm" component={ConfirmationPage} />
       <Route path="/listings" component={FindListingsConnector} />
