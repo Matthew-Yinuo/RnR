@@ -6,7 +6,8 @@ import {
   TextInput,
   SafeAreaView,
   View,
-  FlatList
+  FlatList,
+  ActivityIndicator
 } from "react-native";
 import { SearchListings } from "@airbnb/controller";
 
@@ -52,16 +53,24 @@ export class FindListingsConnector extends React.PureComponent<{}, State> {
           />
           <Text>Beds: {beds}</Text>
         </View>
-        <SearchListings
-          variables={{ input: { name, guests, beds }, limit: 5, offset: 0 }}
-        >
-          {({ listings }) => (
+        <SearchListings variables={{ input: { name }, limit: 5, offset: 0 }}>
+          {({ listings, hasMoreListings, loadMore }) => (
             <FlatList
-              ListFooterComponent={() => (
-                <View>
-                  <Text>Footer</Text>
-                </View>
-              )}
+              ListFooterComponent={() =>
+                hasMoreListings ? (
+                  <ActivityIndicator
+                    style={{
+                      marginBottom: 35
+                    }}
+                  />
+                ) : (
+                  <View />
+                )
+              }
+              onEndReachedThreshold={2}
+              onEndReached={() => {
+                loadMore();
+              }}
               data={listings}
               keyExtractor={({ id }) => `${id}-flc`}
               renderItem={({ item: l }) => (
