@@ -3,13 +3,11 @@ import { RouteComponentProps } from "react-router-dom";
 import { ViewMessages } from "@airbnb/controller";
 import { InputBar } from "./InputBar";
 
-export class MessageConnector extends React.PureComponent<
+export class MessagesConnector extends React.PureComponent<
   RouteComponentProps<{
     listingId: string;
   }>
 > {
-  unsubscribe: () => void;
-
   render() {
     const {
       match: {
@@ -18,13 +16,9 @@ export class MessageConnector extends React.PureComponent<
     } = this.props;
     return (
       <ViewMessages listingId={listingId}>
-        {({ loading, messages, subscribe }) => {
+        {({ loading, messages }) => {
           if (loading) {
             return <div>...loading</div>;
-          }
-
-          if (!this.unsubscribe) {
-            this.unsubscribe = subscribe();
           }
 
           return (
@@ -33,7 +27,6 @@ export class MessageConnector extends React.PureComponent<
                 <div key={`${i}-lm`}>{m.text}</div>
               ))}
               <InputBar listingId={listingId} />
-              <button onClick={this.unsubscribe}>unsubscribe</button>
             </div>
           );
         }}

@@ -6,6 +6,7 @@ import { ImageFile } from "react-dropzone";
 import { Page1 } from "../create/view/Page1";
 import { Page2 } from "../create/view/Page2";
 import { Page3 } from "../create/view/Page3";
+
 const FormItem = AntForm.Item;
 export interface ListingFormValues {
   pictureUrl: string | null;
@@ -53,7 +54,7 @@ export class ListingForm extends React.PureComponent<Props, State> {
   render() {
     const { submit, initialValues = defaultListingFormValues } = this.props;
     return (
-      <Formik<{}, ListingFormValues>
+      <Formik<ListingFormValues>
         initialValues={initialValues}
         onSubmit={submit}
       >
