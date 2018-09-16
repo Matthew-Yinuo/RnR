@@ -9,8 +9,8 @@ export const sendEmail = async (
     host: "smtp.ethereal.email",
     port: 587,
     auth: {
-      user: process.env.NODEMAILER_EMAIL,
-      pass: process.env.NODEMAILER_PASSWORD
+      user: "slt5y2ea45fxw3dw@ethereal.email",
+      pass: "hWuDnv25zX4cBr1AxJ"
     }
   });
 
