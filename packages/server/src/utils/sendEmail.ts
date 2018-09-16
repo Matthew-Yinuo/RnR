@@ -6,11 +6,10 @@ export const sendEmail = async (
   linkText: string
 ) => {
   const transporter = nodemailer.createTransport({
-    host: "smtp.ethereal.email",
-    port: 587,
+    service: "gmail",
     auth: {
-      user: "xek2bngbnyfofbet@ethereal.email",
-      pass: "2TfFZRFdkA67ZvHuPg"
+      user: "w10621405@gms.ndhu.edu.tw",
+      pass: "W1062140500"
     }
   });
 
