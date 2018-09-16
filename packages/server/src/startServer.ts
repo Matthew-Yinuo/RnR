@@ -86,7 +86,10 @@ export const startServer = async () => {
 
   const cors = {
     credentials: true,
-    origin: process.env.NODE_ENV === "test" ? "*" : "http://localhost:3000"
+    origin:
+      process.env.NODE_ENV === "test"
+        ? "*"
+        : "https://festive-shannon-eea836.netlify.com"
   };
 
   server.express.get("/confirm/:id", confirmEmail);

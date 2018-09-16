@@ -12,7 +12,7 @@ const httpLink = createUploadLink({
 
 // Create a WebSocket link:
 const wsLink = new WebSocketLink({
-  uri: `ws://localhost:4000/`,
+  uri: "wss://quiet-sands-92951.herokuapp.com",
   options: {
     reconnect: true
   }
