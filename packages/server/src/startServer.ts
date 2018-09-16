@@ -86,10 +86,7 @@ export const startServer = async () => {
 
   const cors = {
     credentials: true,
-    origin:
-      process.env.NODE_ENV === "test"
-        ? "*"
-        : "https://festive-shannon-eea836.netlify.com"
+    origin: process.env.NODE_ENV === "test" ? "*" : "http://localhost:3000"
   };
 
   server.express.get("/confirm/:id", confirmEmail);
@@ -106,9 +103,7 @@ export const startServer = async () => {
   // fill cache
   const listings = await Listing.find();
   const listingStrings = listings.map(x => JSON.stringify(x));
-  if (listingStrings.length) {
-    await redis.lpush(listingCacheKey, ...listingStrings);
-  }
+  await redis.lpush(listingCacheKey, ...listingStrings);
   // console.log(await redis.lrange(listingCacheKey, 0, -1));
   const port = process.env.PORT || 4000;
   const app = await server.start({
