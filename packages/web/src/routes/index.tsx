@@ -29,14 +29,14 @@ export const Routes = () => (
         path="/change-password/:key"
         component={ChangePasswordConnector}
       />
-      <Route
-        exact={true}
-        path="/listing/:listingId/messages"
-        component={MessagesConnector}
-      />
+      <Route path="/listing/:listingId/chat" component={MessagesConnector} />
       <Route path="/confirm" component={ConfirmationPage} />
       <Route path="/listings" component={FindListingsConnector} />
-      <Route path="/listing/:listingId" component={ViewListingConnector} />
+      <Route
+        exact={true}
+        path="/listing/:listingId"
+        component={ViewListingConnector}
+      />
       <AuthRoute path="/create-listing" component={CreateListingConnector} />
       <Route path="/listing/:listingId/edit" component={EditListingConnector} />
     </Switch>
