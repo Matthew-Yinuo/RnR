@@ -1,17 +1,4 @@
-/* tslint:disable */
-// This file was automatically generated and should not be edited.
 
-// ====================================================
-// GraphQL query operation: MeQuery
-// ====================================================
-
-export interface MeQuery_me {
-  email: string;
-}
-
-export interface MeQuery {
-  me: MeQuery_me | null;
-}
 
 /* tslint:disable */
 // This file was automatically generated and should not be edited.
@@ -33,6 +20,23 @@ export interface ForgotPasswordChangeMutationVariables {
   newPassword: string;
   key: string;
 }
+
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
+// GraphQL query operation: MeQuery
+// ====================================================
+
+export interface MeQuery_me {
+  email: string;
+}
+
+export interface MeQuery {
+  me: MeQuery_me | null;
+}
+
 
 /* tslint:disable */
 // This file was automatically generated and should not be edited.
@@ -58,20 +62,6 @@ export interface CreateListingMutationVariables {
   amenities: string[];
 }
 
-/* tslint:disable */
-// This file was automatically generated and should not be edited.
-
-// ====================================================
-// GraphQL mutation operation: CreateMessageMutation
-// ====================================================
-
-export interface CreateMessageMutation {
-  createMessage: boolean;
-}
-
-export interface CreateMessageMutationVariables {
-  message: MessageInput;
-}
 
 /* tslint:disable */
 // This file was automatically generated and should not be edited.
@@ -96,6 +86,23 @@ export interface FindListingsQuery {
   findListings: FindListingsQuery_findListings[];
 }
 
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
+// GraphQL mutation operation: CreateMessageMutation
+// ====================================================
+
+export interface CreateMessageMutation {
+  createMessage: boolean;
+}
+
+export interface CreateMessageMutationVariables {
+  message: MessageInput;
+}
+
+
 /* tslint:disable */
 // This file was automatically generated and should not be edited.
 
@@ -110,6 +117,7 @@ export interface SendForgotPasswordEmailMutation {
 export interface SendForgotPasswordEmailMutationVariables {
   email: string;
 }
+
 
 /* tslint:disable */
 // This file was automatically generated and should not be edited.
@@ -137,16 +145,6 @@ export interface LoginUserMutationVariables {
   password: string;
 }
 
-/* tslint:disable */
-// This file was automatically generated and should not be edited.
-
-// ====================================================
-// GraphQL mutation operation: LogoutMutation
-// ====================================================
-
-export interface LogoutMutation {
-  logout: boolean | null;
-}
 
 /* tslint:disable */
 // This file was automatically generated and should not be edited.
@@ -168,6 +166,19 @@ export interface RegisterUserMutationVariables {
   email: string;
   password: string;
 }
+
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
+// GraphQL mutation operation: LogoutMutation
+// ====================================================
+
+export interface LogoutMutation {
+  logout: boolean | null;
+}
+
 
 /* tslint:disable */
 // This file was automatically generated and should not be edited.
@@ -206,6 +217,7 @@ export interface SearchListingsQueryVariables {
   limit: number;
 }
 
+
 /* tslint:disable */
 // This file was automatically generated and should not be edited.
 
@@ -221,6 +233,7 @@ export interface UpdateListingMutationVariables {
   listingId: string;
   input: UpdateListingInput;
 }
+
 
 /* tslint:disable */
 // This file was automatically generated and should not be edited.
@@ -257,6 +270,7 @@ export interface ViewListingQueryVariables {
   id: string;
 }
 
+
 /* tslint:disable */
 // This file was automatically generated and should not be edited.
 
@@ -282,6 +296,7 @@ export interface ViewMessagesQuery {
 export interface ViewMessagesQueryVariables {
   listingId: string;
 }
+
 
 /* tslint:disable */
 // This file was automatically generated and should not be edited.
@@ -316,17 +331,20 @@ export interface NewMessageSubscriptionVariables {
 // START Enums and Input Objects
 //==============================================================
 
+// 
 export interface MessageInput {
   text: string;
   listingId: string;
 }
 
+// 
 export interface SearchListingsInput {
   guests?: number | null;
   beds?: number | null;
   name?: string | null;
 }
 
+// 
 export interface UpdateListingInput {
   name?: string | null;
   picture?: any | null;

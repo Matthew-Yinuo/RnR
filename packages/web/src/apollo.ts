@@ -6,7 +6,7 @@ import { WebSocketLink } from "apollo-link-ws";
 import { getMainDefinition } from "apollo-utilities";
 
 const httpLink = createUploadLink({
-  uri: "https://quiet-sands-92951.herokuapp.com",
+  uri: process.env.REACT_APP_SERVER_URL,
   credentials: "include"
 });
 
@@ -17,7 +17,6 @@ const wsLink = new WebSocketLink({
     reconnect: true
   }
 });
-
 // using the ability to split links, you can send data to each link
 // depending on what kind of operation is being sent
 const link = split(
