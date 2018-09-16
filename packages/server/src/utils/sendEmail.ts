@@ -26,4 +26,10 @@ export const sendEmail = async (
         </body>
         </html>`
   };
+
+  transporter.sendMail(message, err => {
+    if (err) {
+      console.log("Error occurred. " + err.message);
+    }
+  });
 };
