@@ -20,6 +20,7 @@ export const resolvers: ResolverMap = {
       }).save();
 
       redis.lpush(listingCacheKey, JSON.stringify(listing));
+
       return true;
     }
   }
