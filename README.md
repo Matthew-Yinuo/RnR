@@ -38,9 +38,6 @@ Open [http://localhost:3000/](http://localhost:3000/) to view the app in the bro
 ### Configuration
 
 All configuration options can be passed to the server using environment variables. The following variables are supported:
- = 211aec847ff282df2edc1b0ec9f0a5ff27fbd7d8
- = https://festive-shannon-eea836.netlify.com
-
 - `SPARKPOST_API_KEY` - The api key to send users email for registration
 - `FRONTEND_HOST` - The port on which the server will listen to requests (Default: 3000)
 
