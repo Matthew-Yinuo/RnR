@@ -12,7 +12,7 @@ const httpLink = createUploadLink({
 
 // Create a WebSocket link:
 const wsLink = new WebSocketLink({
-  uri: "wss://quiet-sands-92951.herokuapp.com",
+  uri: process.env.REACT_APP_SERVER_WS_URL as string,
   options: {
     reconnect: true
   }
