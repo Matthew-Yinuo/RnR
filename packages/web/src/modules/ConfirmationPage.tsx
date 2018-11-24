@@ -9,6 +9,13 @@ export class ConfirmationPage extends React.PureComponent<
       location: { state }
     } = this.props;
     console.log(this.props);
-    return <h1>{state.message}</h1>;
+    return (
+      <div>
+        <h1>
+          {state.message ? state.message : "It looks like you need to login!"}{" "}
+        </h1>
+        <a href="/login">Click here to login</a>
+      </div>
+    );
   }
 }
